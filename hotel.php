@@ -40,7 +40,7 @@ $hotels = [
 ];
 
 $parking;
-if ($hotel['parking'])
+
 ?>
 
 
@@ -60,10 +60,15 @@ if ($hotel['parking'])
         foreach ($hotels as $hotel) {
             echo "<li>" . $hotel['name'];
             echo "<li>" . $hotel['description'];
-            echo "<li>" . $hotel['parking'];
+            if ($hotel['parking']) {
+                $parking = 'disponibile';
+            } else {
+                $parking = 'Non disponibile';
+            }
+            echo "<li>" . $parking;
             echo "<li>" . $hotel['vote'];
             echo "<li>" . $hotel['distance_to_center'];
-            echo "<br>";
+            echo "<hr>";
         }
         ?>
     </ul>
