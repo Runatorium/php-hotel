@@ -59,22 +59,22 @@ $parking;
 <body>
     <div class="list-group">
         <?php
+        echo "<table class='table table-dark table-hover'>";
         foreach ($hotels as $hotel) {
-            echo "<a class='list-group-item list-group-item-action'></a>";
-            echo "<div class='d-flex w-100 justify-content-between'>";
-            echo "<h5 class='mb-1'>" . $hotel['name'] . "</h5>";
-            echo " </div>";
             if ($hotel['parking']) {
                 $parking = 'disponibile';
             } else {
                 $parking = 'Non disponibile';
             }
-            echo "<h5 class='mb-1'>" . $hotel['description'] . "</h5>";
-            echo "<h6 class='mb-1'>" . 'parcheggio : ' . $parking . "</h6>";
-            echo "<small>" . $hotel['vote'] . "</small>";
-            echo "<small>" . $hotel['distance_to_center'] . "</small>";
-            echo "<hr>";
+            echo "<tbody>";
+            echo "<th scope='row'>" . $hotel['name'] . "</th>";
+            echo "<td>" . $hotel['description'] . "</td>";
+            echo "<td>" . 'parcheggio : ' . $parking . "</td>";
+            echo "<td>" . $hotel['vote'] . "</td>";
+            echo "<td>" . $hotel['distance_to_center'] . "</td>";
+            echo "</tbody>";
         }
+        echo "</table>";
         ?>
     </div>
 </body>
